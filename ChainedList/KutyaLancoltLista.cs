@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace ChainedList
 {
-    class LancoltLista
+    class KutyaLancoltLista
     {
-        Ember Head = null;
+        Kutya Head = null;
 
-        public void hozzafuz(Ember ember)
+        public void hozzafuz(Kutya Kutya)
         {
             if (Head == null)
             {
                 // Üres a lista
-                Head = ember;
+                Head = Kutya;
             }
             else
             {
                 // nem üres lista, be kell járnunk
-                Ember act = Head;
+                Kutya act = Head;
                 while (act.Kovetkezo != null)
                     act = act.Kovetkezo;
 
-                act.Kovetkezo = ember;
+                act.Kovetkezo = Kutya;
             }
         }
 
         public void kiirat()
         {
-            Ember act = Head;
+            Kutya act = Head;
 
             while (act != null)
             {
@@ -39,13 +39,13 @@ namespace ChainedList
             }
         }
 
-        public Ember keres(int kor)
+        public Kutya keres(int testsuly)
         {
-            Ember act = Head;
+            Kutya act = Head;
 
             while (act != null)
             {
-                if (act.Kor == kor)
+                if (act.Testsuly == testsuly)
                     return act;
                 act = act.Kovetkezo;
             }
@@ -53,9 +53,9 @@ namespace ChainedList
             return null;
         }
 
-        public Ember ndik(int n)
+        public Kutya ndik(int n)
         {
-            Ember act = Head;
+            Kutya act = Head;
             int idx = 0;
 
             while (act != null)
@@ -69,7 +69,7 @@ namespace ChainedList
             return null;
         }
 
-        public Ember this[int i]
+        public Kutya this[int i]
         {
             get { return ndik(i); }
         }
@@ -78,7 +78,7 @@ namespace ChainedList
         {
             int db = 0;
 
-            Ember act = Head;
+            Kutya act = Head;
 
             while (act != null)
             {
@@ -89,20 +89,20 @@ namespace ChainedList
             return db;
         }
 
-        public void beszuras(Ember ember, int idx)
+        public void beszuras(Kutya Kutya, int idx)
         {
-            Ember act = Head;
+            Kutya act = Head;
 
             if (Head == null)
             {
-                hozzafuz(ember);
+                hozzafuz(Kutya);
                 return;
             }
 
             if (idx == 0)
             {
-                ember.Kovetkezo = Head;
-                Head = ember;
+                Kutya.Kovetkezo = Head;
+                Head = Kutya;
                 return;
             }
 
@@ -112,15 +112,15 @@ namespace ChainedList
             {
                 if (db == idx - 1)
                 {
-                    ember.Kovetkezo = act.Kovetkezo;
-                    act.Kovetkezo = ember;
+                    Kutya.Kovetkezo = act.Kovetkezo;
+                    act.Kovetkezo = Kutya;
                     return;
                 }
                 act = act.Kovetkezo;
                 db++;
             }
 
-            hozzafuz(ember);
+            hozzafuz(Kutya);
         }
 
         public void torles(int idx)
@@ -132,7 +132,7 @@ namespace ChainedList
                 Head = Head.Kovetkezo;
 
             int db = 0;
-            Ember act = Head;
+            Kutya act = Head;
 
             while (act != null)
             {

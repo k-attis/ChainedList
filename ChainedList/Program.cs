@@ -92,6 +92,43 @@ namespace ChainedList
 
             ll.kiirat();
 
+            Console.WriteLine("***Törlés teszt***");
+
+
+            ll.torles(0);
+            ll.torles(1);
+            ll.kiirat();
+
+            Console.WriteLine("***Kutya teszt***");
+            KutyaLancoltLista kll = new KutyaLancoltLista();
+
+            kll.hozzafuz(new Kutya()
+            {
+                Nev = "Bloki_0",
+                Testsuly = 0
+            });
+
+            kll.beszuras(new Kutya()
+            {
+                Nev = "Bloki_00",
+                Testsuly = 1
+            },0);
+
+            kll.hozzafuz(new Kutya()
+            {
+                Nev = "Spárga_32",
+                Testsuly = 32
+            });
+
+            kll.hozzafuz(new Kutya()
+            {
+                Nev = "Barna",
+                Testsuly = 45
+            });
+
+            kll.torles(3);
+            kll.kiirat();
+
 
             Console.ReadKey();
         }
