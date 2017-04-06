@@ -88,5 +88,39 @@ namespace ChainedList
 
             return db;
         }
+
+        public void beszuras(Ember ember, int idx)
+        {
+            Ember act = Head;
+
+            if (Head == null)
+            {
+                hozzafuz(ember);
+                return;
+            }
+
+            if (idx==0)
+            {
+                ember.Kovetkezo = null;
+                Head = ember;
+                return;              
+            }
+
+            int db = 0;
+
+            while (act != null)
+            {
+                if(db == idx-1)
+                {
+                    ember.Kovetkezo = act.Kovetkezo;
+                    act.Kovetkezo = ember;
+                    return;
+                }
+                act = act.Kovetkezo;
+                db++;
+            }
+
+            hozzafuz(ember);
+        }
     }
 }
