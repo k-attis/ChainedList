@@ -54,6 +54,44 @@ namespace ChainedList
                 ll[idx].kiir();
             }
 
+            // 0. hely teszt
+
+            Console.WriteLine("***Beszúrás teszt***");
+
+            ll.beszuras(new Ember()
+            {
+                Nev = "Nulla",
+                Kor = 0
+            }
+            , 0
+            );
+
+            ll.beszuras(new Ember()
+            {
+                Nev = "1",
+                Kor = 1
+            }
+            , 1
+            );
+
+            ll.beszuras(new Ember()
+            {
+                Nev = "3",
+                Kor = 3
+            }
+            , 3
+            );
+
+            ll.beszuras(new Ember()
+            {
+                Nev = "100",
+                Kor = 100
+            }
+            , 100
+            );
+
+            ll.kiirat();
+
 
             Console.ReadKey();
         }

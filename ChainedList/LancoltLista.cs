@@ -101,7 +101,7 @@ namespace ChainedList
 
             if (idx==0)
             {
-                ember.Kovetkezo = null;
+                ember.Kovetkezo = Head;
                 Head = ember;
                 return;              
             }
@@ -121,6 +121,11 @@ namespace ChainedList
             }
 
             hozzafuz(ember);
+        }
+
+        public void torles(int idx)
+        {
+
         }
     }
 }
