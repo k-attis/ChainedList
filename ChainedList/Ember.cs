@@ -12,5 +12,12 @@ namespace ChainedList
 
         public String Nev;
         public int Kor;
+
+        public void kiir()
+        {
+            Console.WriteLine("Nev:{0}, Kor:{1}",
+                Nev, 
+                Kor);
+        }
     }
 }
